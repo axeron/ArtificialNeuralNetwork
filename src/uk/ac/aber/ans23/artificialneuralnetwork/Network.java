@@ -27,14 +27,13 @@ public class Network
 
 	final double epsilon = 0.00000000001;
 
-	//ArrayList<Neuron> numberOfNeurons = new ArrayList<Neuron>(); 
 	final int[] inputs; //TODO needs to take in the number of pixels in the image to be looked at.
 	final double expectedOutputs[][] = { { }, { }, { }, { } }; //TODO don't think I will know the expected outputs.
 	double resultOutputs[][] = { { }, { }, { }, { } };  //TODO pretty sure this isn't needed
 	double output[];
 
 	final Neuron bias = new Neuron();
-	final ArrayList<Neuron> inputLayer = new ArrayList<Neuron>(); //TODO maybe this replaces the need for entire classes for the layers classes? investigate
+	final ArrayList<Neuron> inputLayer = new ArrayList<Neuron>();
 	final ArrayList<Neuron> hiddenLayer = new ArrayList<Neuron>();
 	final ArrayList<Neuron> outputLayer = new ArrayList<Neuron>();
 
@@ -43,10 +42,6 @@ public class Network
 
 	/**
 	 * Constructor for the network, parses in how many neurons needed.
-	 * @param input
-	 * @param hidden
-	 * @param hidden2
-	 * @param output
 	 */
 	public Network()
 	{
@@ -109,16 +104,15 @@ public class Network
 		//printResult();
 		//System.out.println("Sum of squared errors = " + error);
 
-		System.out.println("##### EPOCH " + i+"\n");
+		System.out.println("EPOCH " + i+"\n");
 
 		if (i == maxSteps) 
 		{
-
-			System.out.println("!Error training try again");
+			System.out.println("Maximum number of epochs reached, training unsuccessful");
 		} else 
 		{
-			//printAllWeights();
-			//printWeightUpdate();
+			//printAllWeights();  wait for gui to work
+			//printWeightUpdate(); wait for gui to work
 		}
 	}
 
@@ -173,16 +167,15 @@ public class Network
 		// error check, normalize value ]0;1[
 		for (int i = 0; i < expectedOutput.length; i++) 
 		{
-			double d = expectedOutput[i];
-			if (d < 0 || d > 1) 
+			double expected = expectedOutput[i];
+			if (expected < 0 || expected > 1) 
 			{
-				if (d < 0)
+				if (expected < 0)
 					expectedOutput[i] = 0 + epsilon;
 				else
 					expectedOutput[i] = 1 - epsilon;
 			}
 		}
-
 
 		int i = 0;
 		for (Neuron n : outputLayer) 

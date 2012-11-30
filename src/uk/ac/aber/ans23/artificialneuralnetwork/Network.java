@@ -27,7 +27,7 @@ public class Network
 
 	final double epsilon = 0.00000000001;
 
-	final int[] inputs; //TODO needs to take in the number of pixels in the image to be looked at.
+	final int[] inputs; // Dynamic array, array-size is determined by how many pixels are in the image being processed.
 	final double expectedOutputs[][] = { { }, { }, { }, { } }; //TODO don't think I will know the expected outputs.
 	double resultOutputs[][] = { { }, { }, { }, { } };  //TODO pretty sure this isn't needed
 	double output[];

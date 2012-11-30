@@ -18,7 +18,6 @@ public class NetworkRunner
 	public static void main(String[] args)
 	{
 		NNGUI nngui = new NNGUI();
-		nngui.setVisible(true);
 		maxEpochs = 1000000; // maximum number of cycles the neural network can run. 
 		minErrorCondition = 0.001; //Minimum error that has to be achieved for the training to be successful.
 		Network N = new Network();

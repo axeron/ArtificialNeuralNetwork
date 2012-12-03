@@ -53,8 +53,10 @@ public class NNGUI extends JFrame implements ActionListener
 		this.setJMenuBar(bar);
 		this.pack();
 		this.setVisible(true);
+		this.actionPerformed(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		final JFileChooser fc = new JFileChooser();
@@ -67,6 +69,5 @@ public class NNGUI extends JFrame implements ActionListener
 		{
 			e1.printStackTrace();
 		}
-		
 	}
 }

@@ -21,7 +21,7 @@ public class Neuron {
 	final double bias = -1;
 	ArrayList<NeuronConnections> Inconnections = new ArrayList<NeuronConnections>();
 	HashMap<Integer,NeuronConnections> connectionLookup = new HashMap<Integer,NeuronConnections>();
-	
+
 	/**
 	 * First constructor for the neuron class, allows me to create a neuron with a counter.
 	 */
@@ -30,7 +30,7 @@ public class Neuron {
 		id = counter;
 		counter++;
 	}
-	
+
 	/**
 	 * The second constructor, used to create a new neuron with the number of
 	 * @param input
